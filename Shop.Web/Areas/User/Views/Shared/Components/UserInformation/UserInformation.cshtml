@@ -1,0 +1,17 @@
+﻿@model ApplicationUser
+
+<section class="user-account-content box-shadow">
+    <header>
+        <h1> داشبورد </h1>
+    </header>
+    <div class="inner">
+        <div class="account-information">
+            <h3> اطلاعات کاربری </h3>
+            <ul>
+                <li> <i class="zmdi zmdi-account"></i> نام و نام خانوادگی : @Model.GetUser() </li>
+                <li> <i class="zmdi zmdi-calendar-check"></i> تاریخ عضویت : @Model.CreatedAt </li>
+                   <li> <i class="zmdi zmdi-calendar-check"></i>پست الکترونیک : @Model.Email </li>
+            </ul>
+        </div>
+    </div>
+</section>

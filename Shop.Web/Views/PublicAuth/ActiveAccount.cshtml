@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = "_DefaultLayout";
+}
+@{
+    ViewData["Title"] = " فعال سازی";
+}
+
+<!-- Start Signup Area -->
+<section class="signup-area ptb-100">
+    @if (ViewBag.IsSuccessfully == true)
+    {
+        <div class="alert alert-success">
+            <p class="help-block">حساب کاربری شما با موفقیت فعال شد</p>
+        </div>
+
+        <script>
+            var delay = 5000;
+            setTimeout(function () { window.location = "http://localhost:5235" }, delay)
+        </script>
+    }
+    @if (ViewBag.IsSuccessfully == false)
+    {
+        <div class="alert alert-danger">
+            <p> مشکلی پیش امد لطفا دوباره تلاش کنید </p>
+        </div>
+    }
+</section>

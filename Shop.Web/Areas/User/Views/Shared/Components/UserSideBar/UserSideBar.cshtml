@@ -1,0 +1,30 @@
+﻿@using Shop.Application.ClassHelpers
+@model ApplicationUser
+
+<form>
+    <div class="box-shadow info-image-user mb-3">
+        <div class="p-3">
+            <img class="img-thumbnail  box-shadow img-account" src="@(PathImageExtention.UserAvatarThumb + Model.Avatar)">
+        </div>
+      
+        <div class="text-center p-1">
+            <p class="text-center">@Model.GetUser()</p>
+        </div>
+
+    </div>
+</form>
+
+<section class="box-shadow">
+    <header>
+        <h3> میز کار </h3>
+    </header>
+    <div class="inner">
+        <ul>
+            <li><a href=""> مشاهده حساب کاربری </a></li>
+            <li><a asp-area="User" asp-controller="Account" asp-action="EditProfile" > ویرایش حساب کاربری </a></li>
+            <li><a asp-area="User" asp-controller="Account" asp-action="EditPassword"> تغییر رمز عبور </a></li>
+            <li><a href=""> تنظیمات حساب کاربری </a></li>
+            <li><a href=""> خروج از حساب کاربری </a></li>
+        </ul>
+    </div>
+</section>

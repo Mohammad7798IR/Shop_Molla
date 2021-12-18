@@ -1,0 +1,67 @@
+﻿@model Shop.Domain.ViewModels.Account.LoginUserVM
+
+@{
+    Layout = "_DefaultLayout";
+}
+
+@{
+    ViewData["Title"] = "ورود";
+}
+
+@section Scripts{
+<partial name="_ValidationScripts" />
+<partial name="_CaptchaScript" />
+}
+
+@if (ViewBag.IsSuccessfully == true)
+{
+    <script>
+        var delay = 5000;
+        setTimeout(function () { window.location = "http://localhost:5235" }, delay)
+    </script>
+}
+<div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="background-image: url('/images/backgrounds/login-bg.jpg')">
+    <div class="container">
+        <div class="form-box">
+            <div class="form-tab">
+                <div class="tab-content">
+                    <form asp-action="Login" method="post">
+                        <partial name="_CaptchaInput" />
+                        <div class="col-lg-12">
+                            <label for="register-email">نام کاربری  *</label>
+                            <input asp-for=UserName placeholder="نام کاربری *" class="form-control" id="register-email">
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div><!-- End .form-group -->
+
+                        <div class="col-lg-12">
+                            <label for="register-password">گذرواژه *</label>
+                            <input asp-for=Password type="password" placeholder="گذرواژه" class="form-control" id="register-password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div><!-- End .form-group -->
+
+
+                        <div class="col-lg-4">
+                            <label>مرا به خاطر بسپار</label>
+                            <input asp-for=RememberMe type="checkbox" class=form-control-rounded />
+                            <span asp-validation-for="RememberMe" class="text-danger"></span>
+                        </div>
+
+                        <div>
+                            <a href="/ForgotPassword" class="forgot-link"> گذرواژه خود را فراموش کردید ؟</a>
+                        </div>
+
+                        <div class="form-footer">
+                            <button type="submit" class="btn btn-outline-primary-2">
+                                <span>ورود</span>
+                                <i class="icon-long-arrow-left"></i>
+                            </button>
+
+                        </div><!-- End .form-footer -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

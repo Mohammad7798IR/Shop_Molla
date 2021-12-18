@@ -1,0 +1,68 @@
+﻿@model Shop.Domain.ViewModels.Account.RegisterUserVM
+
+@{
+    Layout = "_DefaultLayout";
+}
+
+@{
+    ViewData["Title"] = "ثبت نام";
+}
+
+@section Scripts{
+<partial name="_ValidationScripts" />
+<partial name="_CaptchaScript" />
+}
+
+@if (ViewBag.IsSuccessfully == true)
+{
+    <script>
+        var delay = 5000;
+        setTimeout(function () { window.location = "http://localhost:5235" }, delay)
+    </script>
+}
+
+<div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17" style="background-image: url('/images/backgrounds/login-bg.jpg')">
+    <div class="container">
+        <div class="form-box">
+            <div class="form-tab">
+                <div class="tab-content">
+                    <form asp-action="Register" method="post">
+                        <partial name="_CaptchaInput" />
+
+                           <div class="col-lg-12">
+                            <label for="singin-email-2"> نام کاربری *</label>
+                            <input type="text" placeholder=" نام کاربری" asp-for="Username" class="form-control">
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <label for="register-email">پست الکترونیک *</label>
+                            <input asp-for=Email placeholder="پست الکترونیک" class="form-control" id="register-email">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div><!-- End .form-group -->
+
+                        <div class="col-lg-12">
+                            <label for="register-password">گذرواژه *</label>
+                            <input asp-for=Password type="password" placeholder="گذرواژه" class="form-control" id="register-password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div><!-- End .form-group -->
+
+                        <div class="col-lg-12">
+                            <label for="register-password">تکرار گذرواژه *</label>
+                            <input asp-for=ConfirmPassword type="password" placeholder="تکرار گذرواژه " class="form-control" id="register-password">
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div><!-- End .form-group -->
+
+                        <div class="form-footer">
+                            <button type="submit" class="btn btn-outline-primary-2">
+                                <span>ثبت نام</span>
+                                <i class="icon-long-arrow-left"></i>
+                            </button>
+
+                        </div><!-- End .form-footer -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
