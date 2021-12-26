@@ -95,9 +95,10 @@ namespace Shop.Infa.Data.Migrations
                     b.Property<string>("CreatedAt")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Description")
+                    b.Property<string>("Description")
+                        .IsRequired()
                         .HasMaxLength(500)
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<bool>("IsPaid")
                         .HasColumnType("bit");

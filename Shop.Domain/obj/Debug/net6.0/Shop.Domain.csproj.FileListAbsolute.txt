@@ -22,3 +22,15 @@ C:\Users\moham\Downloads\Shop_Molla-master\Shop_Molla-master\Shop.Domain\obj\Deb
 C:\Users\moham\Downloads\Shop_Molla-master\Shop_Molla-master\Shop.Domain\obj\Debug\net6.0\Shop.Domain.dll
 C:\Users\moham\Downloads\Shop_Molla-master\Shop_Molla-master\Shop.Domain\obj\Debug\net6.0\ref\Shop.Domain.dll
 C:\Users\moham\Downloads\Shop_Molla-master\Shop_Molla-master\Shop.Domain\obj\Debug\net6.0\Shop.Domain.pdb
+C:\Users\moham\Shop_Molla\Shop.Domain\bin\Debug\net6.0\Shop.Domain.deps.json
+C:\Users\moham\Shop_Molla\Shop.Domain\bin\Debug\net6.0\Shop.Domain.dll
+C:\Users\moham\Shop_Molla\Shop.Domain\bin\Debug\net6.0\ref\Shop.Domain.dll
+C:\Users\moham\Shop_Molla\Shop.Domain\bin\Debug\net6.0\Shop.Domain.pdb
+C:\Users\moham\Shop_Molla\Shop.Domain\obj\Debug\net6.0\Shop.Domain.csproj.AssemblyReference.cache
+C:\Users\moham\Shop_Molla\Shop.Domain\obj\Debug\net6.0\Shop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moham\Shop_Molla\Shop.Domain\obj\Debug\net6.0\Shop.Domain.AssemblyInfoInputs.cache
+C:\Users\moham\Shop_Molla\Shop.Domain\obj\Debug\net6.0\Shop.Domain.AssemblyInfo.cs
+C:\Users\moham\Shop_Molla\Shop.Domain\obj\Debug\net6.0\Shop.Domain.csproj.CoreCompileInputs.cache
+C:\Users\moham\Shop_Molla\Shop.Domain\obj\Debug\net6.0\Shop.Domain.dll
+C:\Users\moham\Shop_Molla\Shop.Domain\obj\Debug\net6.0\ref\Shop.Domain.dll
+C:\Users\moham\Shop_Molla\Shop.Domain\obj\Debug\net6.0\Shop.Domain.pdb

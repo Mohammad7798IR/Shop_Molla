@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SkDANjIhdnmeNtztN9Ry5FdMGmEKc21ebS21wznQs0Im0ohEX9uAaqGYhAK+TfVzCDFkL1LYUqkaLUYz6usv6A==",
+  "dgSpecHash": "UeAdlaBiIbp2eMZ1i6EfaRmAKq6JtyOrVqE3qVO6xGtkLbO4swBbv2PVUfXxL6wSVjqsc/t0wkcYIsH5YpHorw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\moham\\Downloads\\Shop_Molla-master\\Shop_Molla-master\\Shop.Infa.IoC\\Shop.Infa.IoC.csproj",
+  "projectFilePath": "C:\\Users\\moham\\Shop_Molla\\Shop.Infa.IoC\\Shop.Infa.IoC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\moham\\.nuget\\packages\\googlerecaptcha.v3\\1.3.1\\googlerecaptcha.v3.1.3.1.nupkg.sha512",
     "C:\\Users\\moham\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",

@@ -3,23 +3,27 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Interfaces.UserInterfaces;
 using Shop.Domain.ViewModels.Account;
+using Shop.Domain.ViewModels.Wallet;
 using Shop.Web.Extentions;
+using ZarinpalSandbox;
 
 namespace Shop.Web.Areas.User.Controllers
 {
     public partial class AccountController : UserBaseController
     {
         private readonly IUserService _userService;
+        private readonly IWalletService _walletService;
+        private readonly IConfiguration _configuration;
 
-
-        public AccountController(IUserService userService)
+        public AccountController(IUserService userService, IWalletService walletService, IConfiguration configuration)
         {
             _userService = userService;
-
+            _walletService = walletService;
+            _configuration = configuration;
         }
     }
 
-
+    //Edit Profile Actions
 
     public partial class AccountController : UserBaseController
     {
@@ -92,6 +96,77 @@ namespace Shop.Web.Areas.User.Controllers
                     break;
             }
             return View(result);
+        }
+
+    }
+
+    //Wallet Actions
+
+
+    public partial class AccountController : UserBaseController
+    {
+        [Route("ChargeWallet")]
+        [HttpGet]
+        public async Task<IActionResult> ChargeWallet()
+        {
+            //ToDo : Show List Of Trantions 
+            return View();
+        }
+
+        [Route("ChargeWallet")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChargeWallet(ChargeWalletVM userVM)
+        {
+            if (ModelState.IsValid)
+            {
+                var walletId = await _walletService.ChargeWallet(User.GetUserId(), userVM, $"شارژ حساب کاربری به مبلغ {userVM.Amount}");
+
+                var payment = new Payment(userVM.Amount);
+                var url = _configuration.GetSection("Host")["DefaultUrl"] + "/UserPanel/payment/" + walletId;
+                //  "http://localhost:5235/userpanel/chargewallet"
+
+                var result = payment.PaymentRequest("شارژ کیف پول", url);
+
+                if (result.Result.Status == 100)
+                {
+                    return Redirect("https://sandbox.zarinpal.com/pg/StartPay/" + result.Result.Authority);
+                }
+                else
+                {
+                    TempData[ErrorMessage] = "مشکلی پیش امد لطفا دوباره تلاش کنید";
+                }
+
+            }
+            return View();
+        }
+
+        [Route("payment/{id}")]
+        [HttpGet]
+        public async Task<IActionResult> Payment(string id)
+        {
+            if (HttpContext.Request.Query["status"] != "" && HttpContext.Request.Query["status"].ToString().ToLower() == "ok" && HttpContext.Request.Query["Authority"] != "")
+            {
+                var authority = HttpContext.Request.Query["Authority"];
+                var wallet = await _walletService.GetUserWalletById(id);
+
+                if (wallet != null)
+                {
+                    var payment = new Payment((int)wallet.Amount);
+                    var result = payment.Verification(authority);
+
+                    if (result.Result.Status == 100)
+                    {
+
+                        await _walletService.UpdateWalletForCharge(wallet);
+                        ViewBag.RefId = result.Result.RefId;
+                        ViewBag.IsSuccess = true;
+                    }
+                    return View();
+                }
+                return NotFound();
+            }
+            return View();
         }
 
     }

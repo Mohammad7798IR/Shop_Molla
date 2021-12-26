@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6glthvxy1PrjbVmhbcOc0Gx4v4nkmbEkaLCx6oa9Aokb2HW5fT1PlvhvRBCDKLRaxwFr8EqX01XvcPLzRQWoIg==",
+  "dgSpecHash": "TlEDpEKfPZ/BFMdTa2ZD/8TXsHjqNsLR1wuLL3LkGl2k11bPML3Le44sYIWzx6JzySzNhmiMC6D89D+d1YYJtg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\moham\\Downloads\\Shop_Molla-master\\Shop_Molla-master\\Shop.Application\\Shop.Application.csproj",
+  "projectFilePath": "C:\\Users\\moham\\Shop_Molla\\Shop.Application\\Shop.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\moham\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\moham\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

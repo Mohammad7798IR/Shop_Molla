@@ -20,7 +20,7 @@ namespace Shop.Domain.Models.Wallet
         [Display(Name = "شرح")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(500, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد")]
-        public decimal Description { get; set; }
+        public string Description { get; set; }
 
         [Required]
         [Display(Name = "چرداخت شده/نشده")]
@@ -44,8 +44,8 @@ namespace Shop.Domain.Models.Wallet
     public enum WalletType
     {
         [Display(Name = "واریز")]
-        Deposit,
+        variz,
         [Display(Name = "برداشت")]
-        Withraw
+        bardasht
     }
 }

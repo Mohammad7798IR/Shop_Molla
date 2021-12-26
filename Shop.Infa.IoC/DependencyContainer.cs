@@ -27,6 +27,8 @@ namespace Shop.Infa.IoC
             #region Services
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IWalletService, WalletService>();    
+            
 
             #endregion
 
@@ -34,6 +36,7 @@ namespace Shop.Infa.IoC
             #region Repositories
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IWalletRepository, WalletRepository>();
             #endregion
 
 
